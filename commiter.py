@@ -2,8 +2,7 @@ import subprocess
 import random
 import os
 from datetime import date, timedelta
-
-TODAY = date(2026, 5, 25)
+from config import DAYS
 
 
 def _random_time() -> str:
@@ -16,7 +15,8 @@ def _random_time() -> str:
 
 
 def get_commit_date(day_index: int) -> date:
-    return TODAY - timedelta(days=day_index - 1)
+    # day 1 = 最早（DAYS-1 天前），day DAYS = 今天
+    return date.today() - timedelta(days=DAYS - day_index)
 
 
 def commit_day(day_index: int, system_name: str, filepath: str):

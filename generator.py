@@ -86,8 +86,8 @@ def generate_full(system_name: str, day_index: int) -> str:
     solution = generate_solution(question)
 
     from datetime import date, timedelta
-    today = date(2026, 5, 25)
-    day_date = today - timedelta(days=day_index - 1)
+    from config import DAYS
+    day_date = date.today() - timedelta(days=DAYS - day_index)
 
     content = f"""# 第 {day_index} 天：设计 {system_name}
 

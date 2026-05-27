@@ -27,7 +27,7 @@ def run(start_day: int = 1, end_day: int = DAYS):
     durations = []
     session_start = time.time()
 
-    for day in range(end_day, start_day - 1, -1):
+    for day in range(start_day, end_day + 1):
         done += 1
         system = get_system_for_day(day)
 
